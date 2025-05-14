@@ -138,3 +138,9 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'mmalexis9@gmail.com'        # <-- tu correo Gmail
 EMAIL_HOST_PASSWORD = 'akzjpltdztasfbvw'   # <-- usa contraseña de aplicación, no tu clave personal
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+ALLOWED_HOSTS = ['*']
+
+# Configuración para archivos estáticos en Render
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
