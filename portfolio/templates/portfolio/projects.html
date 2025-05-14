@@ -1,0 +1,55 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+
+{% block title %}Proyectos - Alexis Ramírez{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mb-4 text-center">Mis Proyectos</h1>
+
+    <div class="row">
+        {% for project in projects %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ project.title }}</h5>
+                    <p class="card-text">
+                      {{ project.description|truncatechars:100 }}
+                         {% if project.description|length > 100 %}
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#modal{{ project.id }}">Ver más</a>
+                         {% endif %}
+                    </p>
+                    <p><strong>Tecnologías:</strong> {{ project.technologies }}</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between">
+                    {% if project.github_link %}
+                    <a href="{{ project.github_link }}" class="btn btn-outline-dark btn-sm" target="_blank">GitHub</a>
+                    {% endif %}
+                    {% if project.live_demo %}
+                    <a href="{{ project.live_demo }}" class="btn btn-outline-primary btn-sm" target="_blank">Demo</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="modal{{ project.id }}" tabindex="-1" aria-labelledby="modalLabel{{ project.id }}" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content shadow">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel{{ project.id }}">{{ project.title }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <p>{{ project.description }}</p>
+            </div>
+            </div>
+        </div>
+        </div>
+
+        {% empty %}
+        <p>No hay proyectos por ahora.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

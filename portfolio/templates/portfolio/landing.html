@@ -1,0 +1,19 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+
+{% block title %}Inicio - Alexis Ramírez{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <img src="{% static 'img/profile.png' %}" class="rounded-circle shadow mb-4" width="150" height="150" alt="Foto de perfil">
+    <h1 class="mb-3">¡Hola! Soy Alexis Ramírez</h1>
+    <p class="lead mb-4">Desarrollador Backend | QA | Cientifico de Datos | Ciberseguridad</p>
+
+    <div class="d-flex justify-content-center flex-wrap gap-3">
+    <a href="https://github.com/Zeneer" class="btn btn-dark" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/AJRG17142698/" class="btn btn-outline-secondary" target="_blank">LinkedIn</a>
+    <a href="{% static 'files/Engineer Alexis Ramírez Gutierrez.pdf' %}" class="btn btn-outline-success" download>Descargar CV</a>
+</div>
+</a>
+</div>
+{% endblock %}

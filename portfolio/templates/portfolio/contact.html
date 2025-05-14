@@ -1,0 +1,40 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+{% load static form_filters %}
+
+{% block title %}Contacto - Alexis Ramírez{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center mb-4">Contáctame</h1>
+    <p class="text-center">Estoy disponible para colaborar en proyectos o nuevas oportunidades profesionales.</p>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success text-center" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <form method="post" class="mx-auto mt-4" style="max-width: 600px;">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label for="id_nombre" class="form-label">Nombre</label>
+            {{ form.nombre|add_class:"form-control" }}
+        </div>
+
+        <div class="mb-3">
+            <label for="id_correo" class="form-label">Correo electrónico</label>
+            {{ form.correo|add_class:"form-control" }}
+        </div>
+
+        <div class="mb-3">
+            <label for="id_mensaje" class="form-label">Mensaje</label>
+            {{ form.mensaje|add_class:"form-control" }}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>
+{% endblock %}

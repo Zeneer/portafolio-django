@@ -1,0 +1,54 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+
+{% block title %}Sobre mí - Alexis Ramírez{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mb-4 text-center">Sobre mí</h1>
+
+    <div class="row mb-5">
+        <div class="col-md-6">
+            <p>
+                Soy Ingeniero en Mecatrónica con enfoque en desarrollo de software y actualmente estudiante de posgrado en Ciencia de Datos. He trabajado en roles de QA, desarrollo backend con Django y Flask, y he colaborado en proyectos de análisis de datos y seguridad informática. Me apasiona construir soluciones eficientes y seguras, y seguir aprendiendo continuamente en el mundo tech.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <div class="text-center">
+                <img src="{% static 'img/about-placeholder.jpg' %}" 
+                    alt="Foto sobre mí"
+                    class="rounded-circle shadow"
+                    style="width: 180px; height: 180px; object-fit: cover;">
+            </div>
+        </div>
+    </div>
+
+    <h3 class="mb-3">Habilidades Técnicas</h3>
+    <div class="row">
+        <div class="col-md-4">
+            <strong>Lenguajes:</strong>
+            <ul>
+                <li>Python (OOP)</li>
+                <li>C, C++</li>
+                <li>JavaScript, PHP</li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <strong>Frameworks y Herramientas:</strong>
+            <ul>
+                <li>Django, Flask, React</li>
+                <li>Postman, Git/GitHub</li>
+                <li>Bootstrap, HTML/CSS</li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <strong>Datos y Seguridad:</strong>
+            <ul>
+                <li>Pandas, R, Power BI</li>
+                <li>Linux hardening, Nmap, Wireshark</li>
+                <li>SQL, MongoDB</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
