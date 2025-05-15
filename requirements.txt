@@ -1,3 +1,4 @@
+Django>=4.2,<5.0
 argcomplete==1.10.3
 beautifulsoup4==4.8.2
 chardet==3.0.4
